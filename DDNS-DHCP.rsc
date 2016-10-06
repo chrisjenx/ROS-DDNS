@@ -3,11 +3,11 @@
 
 # Domain to be added to your DHCP-clients hostname
 :local topdomain;
-:set topdomain "domain.name";
+:set topdomain [/ip dhcp-server network get number=0 domain];
 
 # Set TTL to use for DDNS entries
 :local ttl;
-:set ttl "00:10:00";
+:set ttl [/ip dhcp-server get number=0 lease-time];
 
 # Set variables to use
 :local FQDN;
